@@ -50,7 +50,7 @@ export function Footer() {
           <span className="grid h-6 w-6 place-items-center rounded bg-gradient-brand text-[10px] font-bold text-black">IM</span>
           <span className="font-display text-sm font-semibold tracking-wide">{site.brand.name}</span>
         </div>
-        <p className="text-xs text-white/40">© {new Date().getFullYear()} Ivan Makarov · контент-продюсер</p>
+        <p className="text-xs text-white/40">© {new Date().getFullYear()} Юрий Баринов · контент-продюсер</p>
       </div>
     </footer>
   );

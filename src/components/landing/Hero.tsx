@@ -100,7 +100,7 @@ export function Hero() {
           <div className="relative aspect-[4/5] w-full max-w-md mx-auto overflow-hidden rounded-3xl border border-white/10">
             <img
               src={h.image}
-              alt="Ivan Makarov"
+              alt="Юрий Баринов"
               width={1024}
               height={1280}
               className="h-full w-full object-cover"

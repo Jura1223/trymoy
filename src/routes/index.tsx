@@ -22,13 +22,13 @@ export const Route = createFileRoute("/")({
   component: Index,
   head: () => ({
     meta: [
-      { title: "Ivan Makarov — Контент-продюсер · Личный бренд через контент" },
+      { title: "Юрий Баринов — Контент-продюсер · Личный бренд через контент" },
       {
         name: "description",
         content:
           "Создаю медийность через контент. Стратегия, сценарии, продакшн, рост Reels, Shorts и YouTube. Кейсы 700K+ подписчиков и x47 рост.",
       },
-      { property: "og:title", content: "Ivan Makarov — Контент-продюсер" },
+      { property: "og:title", content: "Юрий Баринов — Контент-продюсер" },
       {
         property: "og:description",
         content: "Personal brand · контент под ключ · Reels · YouTube · стратегия и рост",

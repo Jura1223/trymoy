@@ -98,7 +98,7 @@ export const site = {
     tag: "КЕЙС №1",
     name: "Игорь Воронцов",
     role: "Эксперт по health-tech, разблокировка убеждений",
-    image: caseVoronсov,
+    image: caseVoroncov,
     pointA: [
       "вёл блог менее 20 000 подписчиков",
       "контент шёл не системно",

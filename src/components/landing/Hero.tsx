@@ -82,11 +82,11 @@ export function Hero() {
           initial={{ opacity: 0, scale: 0.96 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.9, delay: 0.1 }}
-          className="lg:col-span-5 relative"
+          className="lg:col-span-5 relative lg:-ml-32 xl:-ml-48 pointer-events-none"
         >
           <div className="absolute inset-0 -z-10 rounded-full opacity-80 blur-3xl"
                style={{ background: "var(--gradient-radial-glow)" }} />
-          <div className="relative aspect-[4/5] w-full max-w-md mx-auto">
+          <div className="relative aspect-[4/5] w-full max-w-[640px] mx-auto lg:scale-110 origin-center">
             <img
               src={h.image}
               alt="Юра Баринов"

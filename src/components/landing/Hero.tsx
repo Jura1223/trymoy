@@ -90,9 +90,7 @@ export function Hero() {
             <img
               src={h.image}
               alt="Юра Баринов"
-              width={1024}
-              height={1280}
-              className="h-full w-full object-cover"
+              className="h-full w-full object-contain"
             />
           </div>
         </motion.div>

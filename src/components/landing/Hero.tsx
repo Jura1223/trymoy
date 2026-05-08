@@ -11,7 +11,7 @@ const iconMap = {
 export function Hero() {
   const h = site.hero;
   return (
-    <section className="relative overflow-hidden pt-32 pb-20 md:pt-36 md:pb-28">
+    <section className="relative overflow-hidden bg-black pt-32 pb-20 md:pt-36 md:pb-28">
       <div className="noise" aria-hidden />
 
       <div className="container-rail grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">

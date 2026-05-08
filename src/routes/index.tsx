@@ -1,26 +1,70 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Nav } from "@/components/landing/Nav";
+import { Hero } from "@/components/landing/Hero";
+import { LogoMarquee } from "@/components/landing/LogoMarquee";
+import { Services } from "@/components/landing/Services";
+import { CinematicBreak } from "@/components/landing/CinematicBreak";
+import { Workflow } from "@/components/landing/Workflow";
+import { ReelsCarousel } from "@/components/landing/ReelsCarousel";
+import { FeaturedCase } from "@/components/landing/FeaturedCase";
+import { SecondaryCase } from "@/components/landing/SecondaryCase";
+import { CasesCarousel } from "@/components/landing/CasesCarousel";
+import { ContentLists } from "@/components/landing/ContentLists";
+import { Contrast } from "@/components/landing/Contrast";
+import { Manifesto } from "@/components/landing/Manifesto";
+import { Formats, Extras } from "@/components/landing/Formats";
+import { Testimonials } from "@/components/landing/Testimonials";
+import { TopBadge } from "@/components/landing/TopBadge";
+import { FinalCTA, Footer } from "@/components/landing/FinalCTA";
+import { site } from "@/content/site";
 
 export const Route = createFileRoute("/")({
   component: Index,
+  head: () => ({
+    meta: [
+      { title: "Ivan Makarov — Контент-продюсер · Личный бренд через контент" },
+      {
+        name: "description",
+        content:
+          "Создаю медийность через контент. Стратегия, сценарии, продакшн, рост Reels, Shorts и YouTube. Кейсы 700K+ подписчиков и x47 рост.",
+      },
+      { property: "og:title", content: "Ivan Makarov — Контент-продюсер" },
+      {
+        property: "og:description",
+        content: "Personal brand · контент под ключ · Reels · YouTube · стратегия и рост",
+      },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
 });
 
-// IMPORTANT: Replace this placeholder. For sites with multiple pages (About, Services, Contact, etc.),
-// create separate route files (about.tsx, services.tsx, contact.tsx) — don't put all pages in this file.
-function PlaceholderIndex() {
+function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="relative min-h-screen overflow-x-hidden bg-[#0b0b0b] text-white">
+      <Nav />
+      <main>
+        <Hero />
+        <LogoMarquee />
+        <Services />
+        <CinematicBreak text={site.break1.text} sub={site.break1.sub} />
+        <Workflow />
+        <ReelsCarousel />
+        <FeaturedCase />
+        <SecondaryCase />
+        <CasesCarousel />
+        <CinematicBreak text={site.break2.text} sub={site.break2.sub} />
+        <ContentLists />
+        <Contrast />
+        <Manifesto />
+        <CinematicBreak text={site.break3.text} sub={site.break3.sub} />
+        <Formats />
+        <Extras />
+        <Testimonials />
+        <TopBadge />
+        <FinalCTA />
+      </main>
+      <Footer />
     </div>
   );
-}
-
-function Index() {
-  return <PlaceholderIndex />;
 }

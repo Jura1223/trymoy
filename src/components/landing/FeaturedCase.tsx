@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { TrendingUp, Check } from "lucide-react";
+import { TrendingUp } from "lucide-react";
 import { site } from "@/content/site";
 
 // Cinematic SVG growth chart with glow

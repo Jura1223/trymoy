@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { Send } from "lucide-react";
 import { site } from "@/content/site";
 import { useEffect, useState } from "react";

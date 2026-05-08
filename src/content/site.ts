@@ -65,7 +65,7 @@ export const site = {
     "Гарнич",
     "Сбер",
     "VK",
-    "Forbes",
+    "С. Дробышевский",
     "Skillbox",
     "GeekBrains",
   ],

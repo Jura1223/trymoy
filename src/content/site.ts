@@ -16,28 +16,28 @@ import a5 from "@/assets/avatar-5.jpg";
 import a6 from "@/assets/avatar-6.jpg";
 
 export const site = {
-  brand: { name: "ЮРИЙ БАРИНОВ", tagline: "Контент, который строит бренд." },
+  brand: { name: "ЮРА БАРИНОВ", tagline: "Контент-продюсер" },
   nav: [
     { label: "Обо мне", href: "#about" },
-    { label: "Услуги", href: "#services" },
     { label: "Кейсы", href: "#cases" },
+    { label: "Услуги", href: "#services" },
+    { label: "Процесс", href: "#process" },
     { label: "Отзывы", href: "#reviews" },
     { label: "Контакты", href: "#contact" },
   ],
   cta: { label: "Связаться в Telegram", href: "https://t.me/" },
 
   hero: {
-    eyebrow: "Контент-продюсер · Личный бренд",
     titleLine1: "Создаю",
     titleAccent: "медийность",
     titleLine2: "с помощью контента",
-    sub: "Полный цикл контента под ключ: стратегия, сценарии, монтаж и развитие личного бренда.",
+    subLine1: "Полный цикл контента под ключ:",
+    subLine2: "стратегия, сценарии, монтаж и развитие личного бренда.",
     image: portraitHero,
-    badge: { label: "Работаю на", brand: "KWORK", note: "Top-1 продюсер" },
     metrics: [
-      { value: "8 000+", label: "видео смонтировано" },
-      { value: "500+", label: "проектов" },
-      { value: "2 000+", label: "клиентов" },
+      { icon: "clapperboard", value: "8000+", label: "видео создано" },
+      { icon: "eye", value: "800+ млн", label: "просмотров" },
+      { icon: "star", value: "2500+", label: "отзывов" },
     ],
   },
 

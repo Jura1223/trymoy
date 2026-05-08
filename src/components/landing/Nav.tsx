@@ -18,11 +18,10 @@ export function Nav() {
       }`}
     >
       <div className="container-rail flex h-16 items-center justify-between">
-        <a href="#" className="flex items-center gap-2">
-          <span className="grid h-7 w-7 place-items-center rounded-md bg-gradient-brand text-[10px] font-bold text-black">IM</span>
-          <div className="hidden sm:block">
-            <div className="font-display text-[13px] font-semibold tracking-wide">{site.brand.name}</div>
-            <div className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground">контент-продюсер</div>
+        <a href="#" className="flex items-center">
+          <div>
+            <div className="font-display text-[15px] font-bold tracking-wide text-white">{site.brand.name}</div>
+            <div className="text-[11px] text-[var(--brand)]">{site.brand.tagline}</div>
           </div>
         </a>
         <nav className="hidden md:flex items-center gap-8">

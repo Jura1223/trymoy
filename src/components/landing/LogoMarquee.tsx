@@ -12,7 +12,7 @@ export function LogoMarquee() {
           {row.map((logo, i) => (
             <div
               key={i}
-              className="font-display text-2xl md:text-3xl font-semibold text-white/40 transition-colors hover:text-[var(--brand)] whitespace-nowrap"
+              className="font-display text-base md:text-xl font-semibold text-white/40 transition-colors hover:text-[var(--brand)] whitespace-nowrap"
             >
               {logo}
             </div>

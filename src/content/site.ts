@@ -1,5 +1,5 @@
 // All editable site content lives here.
-import portraitHero from "@/assets/portrait-hero.jpg";
+import portraitHero from "@/assets/portrait-hero.png";
 import portraitCta from "@/assets/portrait-cta.jpg";
 import reel1 from "@/assets/reel-1.jpg";
 import reel2 from "@/assets/reel-2.jpg";

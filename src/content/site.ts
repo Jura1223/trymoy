@@ -243,7 +243,7 @@ export const site = {
 
   topBadge: {
     title: "ТОП 1 МОНТАЖЁР НА ПЕРЕДОВОЙ БИРЖЕ ФРИЛАНСА В СНГ",
-    sub: "Отзывы у YuraBarinov",
+    sub: "Отзывы на Kwork · @yurabarinov",
     note: "Готовлюсь с 2020 г.",
     image: portraitCta,
   },

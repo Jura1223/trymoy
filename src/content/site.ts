@@ -6,7 +6,7 @@ import reel2 from "@/assets/reel-2.jpg";
 import reel3 from "@/assets/reel-3.jpg";
 import reel4 from "@/assets/reel-4.jpg";
 import reel5 from "@/assets/reel-5.jpg";
-import caseVoronсov from "@/assets/case-voronсov.jpg";
+import caseVoroncov from "@/assets/case-voroncov.jpg";
 import caseButuzov from "@/assets/case-butuzov.jpg";
 import a1 from "@/assets/avatar-1.jpg";
 import a2 from "@/assets/avatar-2.jpg";

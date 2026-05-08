@@ -5,7 +5,7 @@ export function LogoMarquee() {
   return (
     <section className="relative py-16 border-y border-white/[0.06]">
       <div className="container-rail mb-6">
-        <div className="eyebrow text-center">Работал с</div>
+        <div className="eyebrow text-center text-[var(--brand)]">с кем работал</div>
       </div>
       <div className="mask-fade-x overflow-hidden">
         <div className="flex w-max animate-marquee gap-16 px-8">

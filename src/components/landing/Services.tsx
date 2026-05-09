@@ -5,7 +5,51 @@ export function Services() {
   const { left, right } = site.services;
   return (
     <section id="services" className="py-28 md:py-40">
-      <div className="container-rail grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24">
+      <div className="container-rail">
+        {/* Heading with arrows */}
+        <div className="relative mb-16 md:mb-24 flex flex-col items-center">
+          <div className="font-display text-3xl md:text-5xl font-bold uppercase tracking-tight text-[var(--brand)] glow-text text-center">
+            Чем занимаюсь
+          </div>
+
+          {/* Arrows */}
+          <svg
+            className="hidden md:block absolute left-0 right-0 top-full mt-4 w-full h-24 pointer-events-none"
+            viewBox="0 0 1200 120"
+            fill="none"
+            preserveAspectRatio="none"
+            aria-hidden
+          >
+            <defs>
+              <marker id="arrowL" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+                <path d="M0,0 L10,5 L0,10 z" fill="hsl(var(--brand-hsl, 18 95% 55%))" />
+              </marker>
+              <marker id="arrowR" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+                <path d="M0,0 L10,5 L0,10 z" fill="hsl(var(--brand-hsl, 18 95% 55%))" />
+              </marker>
+            </defs>
+            <path
+              d="M 600 0 C 500 40, 350 60, 180 110"
+              stroke="var(--brand)"
+              strokeWidth="2"
+              strokeLinecap="round"
+              fill="none"
+              markerEnd="url(#arrowL)"
+              opacity="0.85"
+            />
+            <path
+              d="M 600 0 C 700 40, 850 60, 1020 110"
+              stroke="var(--brand)"
+              strokeWidth="2"
+              strokeLinecap="round"
+              fill="none"
+              markerEnd="url(#arrowR)"
+              opacity="0.85"
+            />
+          </svg>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 md:mt-16">
         {[left, right].map((col) => (
           <div key={col.title}>
             <div className="eyebrow mb-4">{col === left ? "01 — Стратегия" : "02 — Производство"}</div>

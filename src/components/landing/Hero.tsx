@@ -38,6 +38,8 @@ export function Hero() {
             {h.subLine1}
             <br />
             {h.subLine2}
+            <br />
+            {h.subLine3}
           </motion.p>
 
           <motion.div

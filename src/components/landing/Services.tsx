@@ -4,7 +4,7 @@ import { site } from "@/content/site";
 export function Services() {
   const { left, right } = site.services;
   return (
-    <section id="services" className="py-28 md:py-40">
+    <section id="services" className="pt-12 pb-28 md:pt-16 md:pb-40">
       <div className="container-rail">
         {/* Heading with arrows */}
         <div className="relative mb-16 md:mb-24 flex flex-col items-center">
@@ -14,8 +14,8 @@ export function Services() {
 
           {/* Arrows */}
           <svg
-            className="hidden md:block absolute left-0 right-0 top-full mt-4 w-full h-24 pointer-events-none"
-            viewBox="0 0 1200 120"
+            className="hidden md:block absolute left-0 right-0 top-full mt-2 w-full h-14 pointer-events-none"
+            viewBox="0 0 1200 70"
             fill="none"
             preserveAspectRatio="none"
             aria-hidden
@@ -29,7 +29,7 @@ export function Services() {
               </marker>
             </defs>
             <path
-              d="M 600 0 C 500 40, 350 60, 180 110"
+              d="M 560 0 C 500 25, 430 45, 340 62"
               stroke="var(--brand)"
               strokeWidth="2"
               strokeLinecap="round"
@@ -38,7 +38,7 @@ export function Services() {
               opacity="0.85"
             />
             <path
-              d="M 600 0 C 700 40, 850 60, 1020 110"
+              d="M 640 0 C 700 25, 770 45, 860 62"
               stroke="var(--brand)"
               strokeWidth="2"
               strokeLinecap="round"

@@ -31,8 +31,8 @@ export const site = {
     titleLine1: "Создаю",
     titleAccent: "медийность",
     titleLine2: "с помощью контента",
-    subLine1: "Полный цикл контента под ключ:",
-    subLine2: "стратегия, сценарии, монтаж и развитие личного бренда.",
+    subLine1: "Для тех, кому нужен контент без стресса и с результатом",
+    subLine2: "",
     image: portraitHero,
     metrics: [
       { icon: "clapperboard", value: "8000+", label: "видео создано" },

@@ -33,7 +33,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="mt-8 max-w-xl text-[17px] leading-relaxed text-white/65"
+            className="mt-8 max-w-xl text-[17px] leading-relaxed text-white/65 my-0 py-0"
           >
             {h.subLine1}
             <br />

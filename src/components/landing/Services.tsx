@@ -52,7 +52,7 @@ export function Services() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 md:mt-16">
         {[left, right].map((col) => (
           <div key={col.title}>
-            <div className="eyebrow mb-4">{col === left ? "01 — Стратегия" : "02 — Производство"}</div>
+            <div className="eyebrow mb-4">{col === left ? "Обсудить проект в Telegram" : "02 — Производство"}</div>
             <h2 className="h2 max-w-md">{col.title}</h2>
             <ul className="mt-10 space-y-px">
               {col.items.map((it) => (

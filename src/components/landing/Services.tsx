@@ -67,6 +67,7 @@ export function Services() {
             </ul>
           </div>
         ))}
+        </div>
       </div>
     </section>
   );

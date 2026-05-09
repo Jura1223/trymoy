@@ -4,7 +4,7 @@ import { site } from "@/content/site";
 export function Services() {
   const { left, right } = site.services;
   return (
-    <section id="services" className="py-28 md:py-40">
+    <section id="services" className="pt-12 pb-28 md:pt-16 md:pb-40">
       <div className="container-rail">
         {/* Heading with arrows */}
         <div className="relative mb-16 md:mb-24 flex flex-col items-center">

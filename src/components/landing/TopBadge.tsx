@@ -1,5 +1,5 @@
 import { site } from "@/content/site";
-import { Award } from "lucide-react";
+
 
 export function TopBadge() {
   const t = site.topBadge;

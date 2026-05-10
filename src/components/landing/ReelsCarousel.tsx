@@ -17,7 +17,7 @@ export function ReelsCarousel() {
         {site.reels.map((r, i) => (
           <div
             key={i}
-            className="snap-start group relative shrink-0 w-[260px] md:w-[300px] aspect-[9/16] overflow-hidden rounded-2xl glass"
+            className="snap-start group relative shrink-0 w-[140px] md:w-[160px] aspect-[9/16] overflow-hidden rounded-2xl glass"
           >
             <img
               src={r.src}

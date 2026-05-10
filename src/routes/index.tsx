@@ -47,17 +47,19 @@ function Index() {
       <Nav />
       <main>
         <Hero />
+        <IntroGlass />
         <LogoMarquee />
-        <Services />
         <CinematicBreak text={site.break1.text} sub={site.break1.sub} />
-        <Workflow />
+        <Services />
         <ReelsCarousel />
         <FeaturedCase />
         <SecondaryCase />
+        <DaryaCase />
         <CasesCarousel />
-        <CinematicBreak text={site.break2.text} sub={site.break2.sub} />
         <ContentLists />
         <Contrast />
+        <Workflow />
+        <CinematicBreak text={site.break2.text} sub={site.break2.sub} />
         <Manifesto />
         <CinematicBreak text={site.break3.text} sub={site.break3.sub} />
         <Formats />

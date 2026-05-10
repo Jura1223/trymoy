@@ -39,8 +39,7 @@ export function FeaturedCase() {
     <section id="cases" className="py-24 md:py-32">
       <div className="container-rail">
         <div className="text-center mb-12">
-          <div className="eyebrow mb-3">Главный кейс</div>
-          <h2 className="h1">Немножко кейсов</h2>
+          <h2 className="h1">Кейсы</h2>
         </div>
 
         <motion.div

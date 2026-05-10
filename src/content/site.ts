@@ -233,10 +233,13 @@ export const site = {
   ],
 
   extras: [
-    { title: "SMM", desc: "ведение соцсетей" },
-    { title: "Telegram", desc: "контент и упаковка" },
-    { title: "YouTube", desc: "канал под ключ" },
-    { title: "Команда", desc: "съёмка, монтаж, продакшн" },
+    { title: "SMM и ведение соцсетей", icon: "share" },
+    { title: "Telegram-боты и автоворонки", icon: "bot" },
+    { title: "Контент-аналитика и стратегия роста", icon: "chart" },
+    { title: "Оформление соцсетей", icon: "layout" },
+    { title: "Прогревы и контентные воронки", icon: "flame" },
+    { title: "Консультации по развитию медийности", icon: "compass" },
+    { title: "Сценарии и монтаж", icon: "film" },
   ],
 
   testimonials: [

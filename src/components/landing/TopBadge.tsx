@@ -16,12 +16,15 @@ export function TopBadge() {
             </div>
 
             <div className="md:col-span-6">
-              <div className="inline-flex items-center gap-2 rounded-full border border-[var(--brand)]/30 bg-[var(--brand)]/10 px-3 py-1 text-[10px] uppercase tracking-[0.22em] text-[var(--brand)]">
-                <Award className="h-3 w-3" /> Признание
-              </div>
-              <h3 className="mt-5 font-display text-3xl md:text-4xl font-bold leading-[1.1]">{t.title}</h3>
-              <p className="mt-4 text-white/65">{t.sub}</p>
-              <p className="mt-1 text-sm text-white/45">{t.note}</p>
+              <h3 className="font-display text-3xl md:text-4xl font-bold leading-[1.1]">{t.title}</h3>
+              <a
+                href={t.subHref}
+                target="_blank"
+                rel="noreferrer"
+                className="mt-4 inline-flex items-center gap-2 text-white/65 underline-offset-4 hover:text-[var(--brand)] hover:underline transition-colors"
+              >
+                {t.sub}
+              </a>
             </div>
 
             <div className="md:col-span-2 grid place-items-center">

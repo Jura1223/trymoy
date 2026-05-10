@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Nav } from "@/components/landing/Nav";
 import { Hero } from "@/components/landing/Hero";
+import { IntroGlass } from "@/components/landing/IntroGlass";
 import { LogoMarquee } from "@/components/landing/LogoMarquee";
 import { Services } from "@/components/landing/Services";
 import { CinematicBreak } from "@/components/landing/CinematicBreak";
@@ -8,6 +9,7 @@ import { Workflow } from "@/components/landing/Workflow";
 import { ReelsCarousel } from "@/components/landing/ReelsCarousel";
 import { FeaturedCase } from "@/components/landing/FeaturedCase";
 import { SecondaryCase } from "@/components/landing/SecondaryCase";
+import { DaryaCase } from "@/components/landing/DaryaCase";
 import { CasesCarousel } from "@/components/landing/CasesCarousel";
 import { ContentLists } from "@/components/landing/ContentLists";
 import { Contrast } from "@/components/landing/Contrast";

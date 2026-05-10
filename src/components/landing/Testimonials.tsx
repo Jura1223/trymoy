@@ -6,7 +6,6 @@ export function Testimonials() {
     <section id="reviews" className="py-24 md:py-32">
       <div className="container-rail">
         <div className="text-center mb-14">
-          <div className="eyebrow mb-3">Отзывы</div>
           <h2 className="h1">Что говорят обо мне</h2>
         </div>
 

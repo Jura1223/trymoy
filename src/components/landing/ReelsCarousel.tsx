@@ -17,7 +17,7 @@ export function ReelsCarousel() {
         {site.reels.map((r, i) => (
           <div
             key={i}
-            className="snap-start group relative shrink-0 w-[260px] md:w-[300px] aspect-[9/16] overflow-hidden rounded-2xl glass"
+            className="snap-start group relative shrink-0 w-[140px] md:w-[160px] aspect-[9/16] overflow-hidden rounded-2xl glass"
           >
             <img
               src={r.src}
@@ -28,18 +28,18 @@ export function ReelsCarousel() {
             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
             <div className="absolute inset-0 ring-1 ring-inset ring-white/5 rounded-2xl pointer-events-none" />
 
-            <div className="absolute top-4 left-4 flex items-center gap-2 rounded-full bg-black/40 backdrop-blur px-2.5 py-1 border border-white/10">
-              <span className="h-1.5 w-1.5 rounded-full bg-[var(--brand)]" />
-              <span className="text-[10px] uppercase tracking-wider text-white/80">{r.label}</span>
+            <div className="absolute top-2 left-2 flex items-center gap-1.5 rounded-full bg-black/40 backdrop-blur px-2 py-0.5 border border-white/10">
+              <span className="h-1 w-1 rounded-full bg-[var(--brand)]" />
+              <span className="text-[8px] uppercase tracking-wider text-white/80">{r.label}</span>
             </div>
 
-            <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between">
+            <div className="absolute bottom-2 left-2 right-2 flex items-end justify-between">
               <div>
-                <div className="font-display text-xl font-bold text-white">{r.views}</div>
-                <div className="text-[11px] uppercase tracking-wider text-white/55">просмотров</div>
+                <div className="font-display text-sm font-bold text-white">{r.views}</div>
+                <div className="text-[8px] uppercase tracking-wider text-white/55">просмотров</div>
               </div>
-              <button className="grid h-11 w-11 place-items-center rounded-full bg-[var(--brand)] text-black opacity-0 group-hover:opacity-100 transition-all translate-y-2 group-hover:translate-y-0">
-                <Play className="h-4 w-4 fill-current" />
+              <button className="grid h-7 w-7 place-items-center rounded-full bg-[var(--brand)] text-black opacity-0 group-hover:opacity-100 transition-all translate-y-1 group-hover:translate-y-0">
+                <Play className="h-3 w-3 fill-current" />
               </button>
             </div>
           </div>

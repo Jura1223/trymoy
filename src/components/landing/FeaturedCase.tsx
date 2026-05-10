@@ -39,8 +39,7 @@ export function FeaturedCase() {
     <section id="cases" className="py-24 md:py-32">
       <div className="container-rail">
         <div className="text-center mb-12">
-          <div className="eyebrow mb-3">Главный кейс</div>
-          <h2 className="h1">Немножко кейсов</h2>
+          <h2 className="h1">Кейсы</h2>
         </div>
 
         <motion.div
@@ -56,10 +55,7 @@ export function FeaturedCase() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 relative">
             {/* Left: Identity */}
             <div className="lg:col-span-4">
-              <div className="inline-flex items-center gap-2 rounded-full border border-[var(--brand)]/30 bg-[var(--brand)]/10 px-3 py-1 text-[10px] uppercase tracking-[0.22em] text-[var(--brand)]">
-                {c.tag}
-              </div>
-              <h3 className="mt-6 font-display text-3xl md:text-4xl font-bold tracking-tight">{c.name}</h3>
+              <h3 className="font-display text-3xl md:text-4xl font-bold tracking-tight">{c.name}</h3>
               <p className="mt-2 text-sm text-white/55">{c.role}</p>
 
               <div className="mt-8 aspect-square w-full max-w-[280px] overflow-hidden rounded-2xl border border-white/10">

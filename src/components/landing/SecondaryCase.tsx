@@ -15,10 +15,7 @@ export function SecondaryCase() {
         >
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
             <div className="lg:col-span-4">
-              <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-[10px] uppercase tracking-[0.22em] text-white/70">
-                {c.tag}
-              </div>
-              <h3 className="mt-6 font-display text-3xl md:text-4xl font-bold">{c.name}</h3>
+              <h3 className="font-display text-3xl md:text-4xl font-bold">{c.name}</h3>
               <p className="mt-2 text-sm text-white/55">{c.role}</p>
 
               <div className="mt-8 aspect-square w-full max-w-[280px] overflow-hidden rounded-2xl border border-white/10">

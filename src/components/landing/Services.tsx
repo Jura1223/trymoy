@@ -4,7 +4,7 @@ import { site } from "@/content/site";
 export function Services() {
   const { left, right } = site.services;
   return (
-    <section id="services" className="pt-12 pb-28 md:pt-16 md:pb-40">
+    <section id="services" className="bg-[#0E0E0E] pt-12 pb-28 md:pt-16 md:pb-40">
       <div className="container-rail">
         {/* Heading with arrows */}
         <div className="relative mb-16 md:mb-24 flex flex-col items-center">
@@ -52,16 +52,15 @@ export function Services() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 md:mt-16">
         {[left, right].map((col) => (
           <div key={col.title}>
-            <div className="eyebrow mb-4">{col === left ? "Обсудить проект в Telegram" : "02 — Производство"}</div>
             <h2 className="h2 max-w-md">{col.title}</h2>
             <ul className="mt-10 space-y-px">
               {col.items.map((it) => (
                 <li
                   key={it}
-                  className="group flex items-center justify-between border-t border-white/[0.07] py-4 text-[15px] text-white/80 transition-colors hover:text-white"
+                  className="group flex items-center gap-3 border-t border-white/[0.07] py-4 text-[22px] text-white/80 transition-colors hover:text-white"
                 >
+                  <Check className="h-5 w-5 text-[var(--brand)]/70 transition-transform group-hover:scale-110 shrink-0" />
                   <span>{it}</span>
-                  <Check className="h-4 w-4 text-[var(--brand)]/70 transition-transform group-hover:scale-110" />
                 </li>
               ))}
             </ul>

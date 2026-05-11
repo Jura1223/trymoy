@@ -28,12 +28,12 @@ export function CasesCarousel() {
               loading="lazy"
               className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
+            <div className="absolute inset-0 bg-black/45" />
             <div className="absolute bottom-0 inset-x-0 p-5">
               <div className="font-display text-lg font-semibold text-white">{c.name}</div>
               <div className="mt-1 text-xs text-white/60">{c.role}</div>
             </div>
-            <div className="absolute top-4 right-4 grid h-9 w-9 place-items-center rounded-full bg-white/[0.08] backdrop-blur border border-white/15 opacity-0 group-hover:opacity-100 transition-opacity">
+            <div className="absolute top-4 right-4 grid h-9 w-9 place-items-center rounded-full bg-black border border-white/15 opacity-0 group-hover:opacity-100 transition-opacity">
               <ArrowUpRight className="h-4 w-4 text-white" />
             </div>
           </article>

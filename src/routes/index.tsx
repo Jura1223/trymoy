@@ -1,22 +1,19 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Nav } from "@/components/landing/Nav";
 import { Hero } from "@/components/landing/Hero";
+import { Services } from "@/components/landing/Services";
 import { IntroGlass } from "@/components/landing/IntroGlass";
 import { LogoMarquee } from "@/components/landing/LogoMarquee";
-import { Services } from "@/components/landing/Services";
 import { CinematicBreak } from "@/components/landing/CinematicBreak";
 import { Workflow } from "@/components/landing/Workflow";
 import { ReelsCarousel } from "@/components/landing/ReelsCarousel";
 import { FeaturedCase } from "@/components/landing/FeaturedCase";
 import { SecondaryCase } from "@/components/landing/SecondaryCase";
 import { DaryaCase } from "@/components/landing/DaryaCase";
-import { CasesCarousel } from "@/components/landing/CasesCarousel";
 import { ContentLists } from "@/components/landing/ContentLists";
 import { Contrast } from "@/components/landing/Contrast";
-import { Manifesto } from "@/components/landing/Manifesto";
-import { Formats, Extras } from "@/components/landing/Formats";
+import { Extras } from "@/components/landing/Formats";
 import { Testimonials } from "@/components/landing/Testimonials";
-import { TopBadge } from "@/components/landing/TopBadge";
 import { FinalCTA, Footer } from "@/components/landing/FinalCTA";
 import { site } from "@/content/site";
 
@@ -43,29 +40,23 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   return (
-    <div className="relative min-h-screen overflow-x-hidden bg-[#0b0b0b] text-white">
+    <div className="relative min-h-screen overflow-x-hidden bg-[#0E0E0E] text-white">
       <Nav />
       <main>
         <Hero />
         <IntroGlass />
+        <Services />
         <LogoMarquee />
         <CinematicBreak text={site.break1.text} sub={site.break1.sub} />
-        <Services />
-        <ReelsCarousel />
         <FeaturedCase />
         <SecondaryCase />
         <DaryaCase />
-        <CasesCarousel />
+        <ReelsCarousel />
         <ContentLists />
         <Contrast />
         <Workflow />
-        <CinematicBreak text={site.break2.text} sub={site.break2.sub} />
-        <Manifesto />
-        <CinematicBreak text={site.break3.text} sub={site.break3.sub} />
-        <Formats />
         <Extras />
         <Testimonials />
-        <TopBadge />
         <FinalCTA />
       </main>
       <Footer />

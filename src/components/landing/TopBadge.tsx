@@ -28,7 +28,7 @@ export function TopBadge() {
             </div>
 
             <div className="md:col-span-2 grid place-items-center">
-              <div className="relative grid h-32 w-32 place-items-center rounded-2xl border border-[var(--brand)]/40 bg-[var(--brand)]/8">
+              <div className="relative grid h-32 w-32 place-items-center rounded-2xl border border-[var(--brand)]/40 bg-black">
                 <div className="absolute inset-0 rounded-2xl blur-2xl opacity-60"
                      style={{ background: "var(--gradient-radial-glow)" }} />
                 <span className="relative font-display text-6xl font-bold text-[var(--brand)] glow-text">K</span>

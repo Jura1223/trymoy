@@ -1,6 +1,36 @@
 import { motion } from "framer-motion";
 import { Play, Mic } from "lucide-react";
 import { site } from "@/content/site";
+import { AudioPlayer } from "@/components/ui/AudioPlayer";
+import { VideoModal } from "@/components/ui/VideoModal";
+import { useState } from "react";
+
+const exampleWorks = [
+  {
+    id: "dasha-1",
+    title: "Пример работы 1",
+    vkUrl: "https://vk.com/clip_ext.php?oid=1050064932&id=456239030&autoplay=1",
+    image: "/images/previewsforvideo/dashaexamplework1.png"
+  },
+  {
+    id: "dasha-2",
+    title: "Пример работы 2",
+    vkUrl: "https://vk.com/clip_ext.php?oid=1050064932&id=456239031&autoplay=1",
+    image: "/images/previewsforvideo/dashaexamplework2.png"
+  },
+  {
+    id: "dasha-3",
+    title: "Пример работы 3",
+    vkUrl: "https://vk.com/clip_ext.php?oid=1050064932&id=456239032&autoplay=1",
+    image: "/images/previewsforvideo/dashaexamplework3.png"
+  },
+  {
+    id: "dasha-4",
+    title: "Пример работы 4",
+    vkUrl: "https://vk.com/clip_ext.php?oid=1050064932&id=456239035&autoplay=1",
+    image: "/images/previewsforvideo/dashaexamplework4.png"
+  }
+];
 
 function Waveform() {
   // pseudo-random heights, deterministic
@@ -14,7 +44,7 @@ function Waveform() {
       {bars.map((h, i) => (
         <span
           key={i}
-          className="w-[3px] rounded-full bg-gradient-to-t from-[var(--brand)]/40 to-[var(--brand)]"
+          className="w-[3px] rounded-full bg-[var(--brand)]"
           style={{ height: `${h}px`, opacity: i < 6 ? 1 : 0.55 }}
         />
       ))}
@@ -24,8 +54,9 @@ function Waveform() {
 
 export function DaryaCase() {
   const c = site.daryaCase;
+  const [selectedVideo, setSelectedVideo] = useState<{ url: string; title: string } | null>(null);
   return (
-    <section className="pb-24 md:pb-32">
+    <section className="bg-[#0E0E0E] pb-20 md:pb-28">
       <div className="container-rail">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -45,19 +76,23 @@ export function DaryaCase() {
               <h3 className="font-display text-3xl md:text-4xl font-bold tracking-tight">{c.name}</h3>
               <p className="mt-2 text-sm text-white/55">{c.role}</p>
 
-              <div className="mt-8 aspect-square w-full max-w-[280px] overflow-hidden rounded-2xl border border-white/10">
-                <img src={c.image} alt={c.name} loading="lazy" className="h-full w-full object-cover" />
-              </div>
-
-              <div className="mt-6 flex items-center gap-3">
-                <div className="flex -space-x-3">
-                  {c.proof.map((src, i) => (
-                    <img key={i} src={src} alt="" loading="lazy"
-                         className="h-9 w-9 rounded-full border-2 border-[#1a1a1a] object-cover" />
-                  ))}
+              {/* Audio CTA - moved to left top */}
+              {c.audioFile && (
+                <AudioPlayer 
+                  audioSrc={c.audioFile}
+                  label={c.audioLabel}
+                  className="mt-6 scale-[1.3] origin-left w-full max-w-[250px]"
+                />
+              )}
+              
+              {c.instagramImage && (
+                <div className="mt-4 relative overflow-hidden rounded-2xl border border-white/10">
+                  <img src={c.instagramImage} alt="Instagram Дарьи Черняк" loading="lazy" className="h-full w-full object-cover" />
+                  <div className="absolute top-2 right-2 bg-gradient-to-r from-purple-500/90 to-pink-500/90 text-white text-[10px] px-2 py-1 rounded-full">
+                    Instagram
+                  </div>
                 </div>
-                <div className="text-xs text-white/55">эксперты доверяют</div>
-              </div>
+              )}
             </div>
 
             <div className="lg:col-span-8">
@@ -65,29 +100,13 @@ export function DaryaCase() {
                 {c.headline}
               </div>
 
-              <div className="mt-8 grid grid-cols-3 gap-px bg-white/[0.07] rounded-2xl overflow-hidden">
+              <div className="mt-8 grid grid-cols-3 gap-3 rounded-2xl">
                 {c.metrics.map((m) => (
-                  <div key={m.label} className="bg-[#0e0e0e] p-5">
+                  <div key={m.label} className="bg-[#0E0E0E] border border-white/[0.07] rounded-xl p-5">
                     <div className="font-display text-2xl md:text-3xl font-bold text-[var(--brand)]">{m.value}</div>
                     <div className="mt-1 text-[11px] uppercase tracking-wider text-white/50">{m.label}</div>
                   </div>
                 ))}
-              </div>
-
-              {/* Reels previews */}
-              <div className="mt-8">
-                <div className="eyebrow mb-3">Примеры reels</div>
-                <div className="grid grid-cols-4 gap-3">
-                  {c.reels.map((src, i) => (
-                    <div key={i} className="relative aspect-[9/16] overflow-hidden rounded-xl border border-white/10 group">
-                      <img src={src} alt="" loading="lazy" className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
-                      <div className="absolute bottom-2 right-2 grid h-7 w-7 place-items-center rounded-full bg-[var(--brand)]/90 text-black">
-                        <Play className="h-3 w-3 fill-current" />
-                      </div>
-                    </div>
-                  ))}
-                </div>
               </div>
 
               {/* Quote */}
@@ -95,22 +114,37 @@ export function DaryaCase() {
                 {c.quote}
               </blockquote>
 
-              {/* Audio CTA */}
-              <button
-                type="button"
-                className="mt-6 group inline-flex items-center gap-4 rounded-2xl border border-white/10 bg-white/[0.03] hover:border-[var(--brand)]/40 hover:bg-white/[0.05] transition-all px-5 py-3.5"
-              >
-                <span className="grid h-10 w-10 place-items-center rounded-full bg-[var(--brand)] text-black shadow-[var(--shadow-glow-md)]">
-                  <Mic className="h-4 w-4" />
-                </span>
-                <span className="text-left">
-                  <span className="block font-display text-sm font-semibold text-white">{c.audioLabel}</span>
-                  <span className="block text-[11px] text-white/50">0:42 · голосовое от Дарьи</span>
-                </span>
-                <Waveform />
-              </button>
+              {/* 4 примера работ */}
+              <div className="mt-8 grid grid-cols-4 gap-3">
+                {exampleWorks.map((video, i) => (
+                  <motion.button
+                    key={video.id}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: i * 0.1 }}
+                    onClick={() => setSelectedVideo({ url: video.vkUrl, title: video.title })}
+                    className="relative aspect-[9/16] overflow-hidden rounded-xl border border-white/10 hover:border-[var(--brand)]/40 transition-all group"
+                  >
+                    <img src={video.image} alt={video.title} loading="lazy" className="h-full w-full object-cover" />
+                    <div className="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition-colors" />
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="grid h-10 w-10 place-items-center rounded-full bg-[var(--brand)]/90 text-black opacity-100 transition-all">
+                        <Play className="h-5 w-5 fill-current" />
+                      </div>
+                    </div>
+                  </motion.button>
+                ))}
+              </div>
             </div>
           </div>
+
+          <VideoModal
+            isOpen={selectedVideo !== null}
+            onClose={() => setSelectedVideo(null)}
+            videoUrl={selectedVideo?.url || ""}
+            title={selectedVideo?.title}
+          />
         </motion.div>
       </div>
     </section>

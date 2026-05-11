@@ -3,7 +3,7 @@ import { site } from "@/content/site";
 
 export function ContentLists() {
   return (
-    <section className="py-24 md:py-32">
+    <section className="bg-[#0E0E0E] py-20 md:py-28">
       <div className="container-rail">
         <h2 className="h2 max-w-3xl">{site.contentLists.title}</h2>
 

@@ -3,7 +3,7 @@ import { site } from "@/content/site";
 export function LogoMarquee() {
   const row = [...site.logos, ...site.logos];
   return (
-    <section className="relative py-16 border-y border-white/[0.06]">
+    <section className="relative bg-[#0E0E0E] py-14 border-y border-white/[0.06]">
       <div className="container-rail mb-6">
         <div className="eyebrow text-center text-[var(--brand)]">с кем работал</div>
       </div>

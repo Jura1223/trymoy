@@ -1,6 +1,8 @@
+import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { TrendingUp } from "lucide-react";
+import { TrendingUp, User, Shirt, Flame, Handshake, Play } from "lucide-react";
 import { site } from "@/content/site";
+import { VideoModal } from "@/components/ui/VideoModal";
 
 // Cinematic SVG growth chart with glow
 function GrowthChart() {
@@ -33,8 +35,16 @@ function GrowthChart() {
   );
 }
 
+const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
+  user: User,
+  shirt: Shirt,
+  flame: Flame,
+  handshake: Handshake,
+};
+
 export function FeaturedCase() {
   const c = site.featuredCase;
+  const [selectedVideo, setSelectedVideo] = useState<{ url: string; title: string } | null>(null);
   return (
     <section id="cases" className="py-24 md:py-32">
       <div className="container-rail">
@@ -73,6 +83,35 @@ export function FeaturedCase() {
                   ))}
                 </ul>
               </div>
+
+              {/* Video Review - moved under Point A */}
+              {c.reviewVideo && (
+                <div className="mt-6">
+                  <button
+                    type="button"
+                    onClick={() => setSelectedVideo({ url: c.reviewVideo.vkUrl, title: c.reviewVideo.title })}
+                    className="relative group w-full max-w-[200px] aspect-[9/16] overflow-hidden rounded-xl border border-white/10 hover:border-[var(--brand)]/40 transition-all max-h-[320px]"
+                  >
+                    {c.reviewVideo.image && (
+                      <img
+                        src={c.reviewVideo.image}
+                        alt={c.reviewVideo.title}
+                        loading="lazy"
+                        className="h-full w-full object-cover"
+                      />
+                    )}
+                    <div className="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition-colors" />
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="grid h-12 w-12 place-items-center rounded-full bg-[var(--brand)]/90 text-black opacity-100 transition-all">
+                        <Play className="h-6 w-6 fill-current ml-1" />
+                      </div>
+                    </div>
+                    <div className="absolute bottom-3 left-3 right-3">
+                      <div className="text-white font-display text-sm font-bold">Прослушать видеоотзыв</div>
+                    </div>
+                  </button>
+                </div>
+              )}
             </div>
 
             {/* Right: Result + chart */}
@@ -97,33 +136,75 @@ export function FeaturedCase() {
                 <GrowthChart />
               </div>
 
-              <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-px bg-white/[0.07] rounded-2xl overflow-hidden">
-                {c.metrics.map((m) => (
-                  <div key={m.label} className="bg-[#0e0e0e] px-5 py-5">
-                    <div className="font-display text-2xl font-bold text-white">{m.value}</div>
-                    <div className="mt-1 text-[11px] uppercase tracking-wider text-white/50">{m.label}</div>
+              {/* Social Proof Blocks */}
+              <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-3">
+                {c.socialProofs?.map((sp, i) => {
+                  const Icon = iconMap[sp.icon] || User;
+                  return (
+                    <div key={i} className="bg-[#0e0e0e] border border-white/[0.08] rounded-xl px-4 py-4 flex items-start gap-3">
+                      <div className="h-10 w-10 rounded-full bg-[var(--brand)]/10 flex items-center justify-center shrink-0">
+                        <Icon className="h-5 w-5 text-[var(--brand)]" />
+                      </div>
+                      <div className="min-w-0">
+                        <div className="text-sm text-white/90 font-medium">{sp.text}</div>
+                        <div className="text-xs text-white/50">{sp.subtext}</div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+
+              {/* 3 примера работ */}
+              <div className="mt-8 grid grid-cols-3 gap-3">
+                <button
+                  type="button"
+                  onClick={() => setSelectedVideo({ url: "https://vk.com/clip_ext.php?oid=1050064932&id=456239021&autoplay=1", title: "Пример работы 1" })}
+                  className="relative group aspect-[9/16] overflow-hidden rounded-xl border border-white/10 hover:border-[var(--brand)]/40 transition-all"
+                >
+                  <img src="/images/previewsforvideo/igorexamplework1.jpg" alt="Пример работы 1" loading="lazy" className="h-full w-full object-cover" />
+                  <div className="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition-colors" />
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="grid h-10 w-10 place-items-center rounded-full bg-[var(--brand)]/90 text-black opacity-100 transition-all">
+                      <Play className="h-5 w-5 fill-current" />
+                    </div>
                   </div>
-                ))}
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setSelectedVideo({ url: "https://vk.com/clip_ext.php?oid=1050064932&id=456239022&autoplay=1", title: "Пример работы 2" })}
+                  className="relative group aspect-[9/16] overflow-hidden rounded-xl border border-white/10 hover:border-[var(--brand)]/40 transition-all"
+                >
+                  <img src="/images/previewsforvideo/igorexamplework2.jpg" alt="Пример работы 2" loading="lazy" className="h-full w-full object-cover" />
+                  <div className="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition-colors" />
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="grid h-10 w-10 place-items-center rounded-full bg-[var(--brand)]/90 text-black opacity-100 transition-all">
+                      <Play className="h-5 w-5 fill-current" />
+                    </div>
+                  </div>
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setSelectedVideo({ url: "https://vk.com/clip_ext.php?oid=1050064932&id=456239023&autoplay=1", title: "Пример работы 3" })}
+                  className="relative group aspect-[9/16] overflow-hidden rounded-xl border border-white/10 hover:border-[var(--brand)]/40 transition-all"
+                >
+                  <img src="/images/previewsforvideo/igorexamplework3.jpg" alt="Пример работы 3" loading="lazy" className="h-full w-full object-cover" />
+                  <div className="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition-colors" />
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="grid h-10 w-10 place-items-center rounded-full bg-[var(--brand)]/90 text-black opacity-100 transition-all">
+                      <Play className="h-5 w-5 fill-current" />
+                    </div>
+                  </div>
+                </button>
               </div>
-
-              {/* Social proof */}
-              <div className="mt-8 flex items-center gap-4 flex-wrap">
-                <div className="flex -space-x-3">
-                  {c.proof.map((src, i) => (
-                    <img key={i} src={src} alt="" loading="lazy"
-                         className="h-10 w-10 rounded-full border-2 border-[#1a1a1a] object-cover" />
-                  ))}
-                </div>
-                <div className="text-sm text-white/55">
-                  <span className="text-white">Доверяют</span> предприниматели и эксперты
-                </div>
-              </div>
-
-              <blockquote className="mt-8 border-l-2 border-[var(--brand)] pl-5 text-[15px] leading-relaxed text-white/75 italic">
-                «{c.quote}»
-              </blockquote>
             </div>
           </div>
+
+          <VideoModal
+            isOpen={selectedVideo !== null}
+            onClose={() => setSelectedVideo(null)}
+            videoUrl={selectedVideo?.url || ""}
+            title={selectedVideo?.title}
+          />
         </motion.div>
       </div>
     </section>

@@ -72,18 +72,21 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lumina Canvas offers a premium redesign for personal brand websites, enhancing visuals and user experience." },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lumina Canvas offers a premium redesign for personal brand websites, enhancing visuals and user experience." },
+      {
+        title: "Юрий Баринов — Контент-продюсер · Личный бренд через контент",
+      },
+      {
+        name: "description",
+        content:
+          "Создаю медийность через контент. Стратегия, сценарии, продакшн, рост Reels, Shorts и YouTube.",
+      },
+      { property: "og:title", content: "Юрий Баринов — Контент-продюсер" },
+      {
+        property: "og:description",
+        content: "Personal brand · контент под ключ · Reels · YouTube · стратегия и рост",
+      },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
-      { name: "twitter:title", content: "Lovable App" },
-      { name: "twitter:description", content: "Lumina Canvas offers a premium redesign for personal brand websites, enhancing visuals and user experience." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/b86e571d-db0a-4f88-91aa-5af927ce33f2/id-preview-4519c75c--b47ea2b5-e7da-4971-be99-d6d1031b2b54.lovable.app-1778313362749.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/b86e571d-db0a-4f88-91aa-5af927ce33f2/id-preview-4519c75c--b47ea2b5-e7da-4971-be99-d6d1031b2b54.lovable.app-1778313362749.png" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
       {

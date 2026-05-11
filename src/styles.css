@@ -8,7 +8,7 @@
 
 /*
  * Premium dark luxury design system — Yuri Barinov.
- * Background #0b0b0b, accent #ff6a00 with cinematic orange glow.
+ * Background #0E0E0E, accent #ff6a00 with subtle orange glow.
  * Glass effect used ONLY in featured tiles, cases, reels, testimonials, CTA.
  */
 
@@ -56,17 +56,17 @@
   --radius: 0.875rem;
 
   /* Dark luxury palette */
-  --background: oklch(0.16 0 0);
+  --background: #0e0e0e;
   --foreground: oklch(0.97 0 0);
-  --card: oklch(0.19 0 0);
+  --card: #0e0e0e;
   --card-foreground: oklch(0.97 0 0);
-  --popover: oklch(0.19 0 0);
+  --popover: #0e0e0e;
   --popover-foreground: oklch(0.97 0 0);
   --primary: oklch(0.72 0.19 47);
   --primary-foreground: oklch(0.12 0 0);
-  --secondary: oklch(0.24 0 0);
+  --secondary: #0e0e0e;
   --secondary-foreground: oklch(0.97 0 0);
-  --muted: oklch(0.22 0 0);
+  --muted: #0e0e0e;
   --muted-foreground: oklch(0.66 0 0);
   --accent: oklch(0.72 0.19 47);
   --accent-foreground: oklch(0.12 0 0);
@@ -79,8 +79,8 @@
   /* Brand tokens */
   --brand: oklch(0.72 0.19 47);             /* #ff6a00 */
   --brand-glow: oklch(0.78 0.18 55);
-  --surface-1: oklch(0.18 0 0);
-  --surface-2: oklch(0.22 0 0);
+  --surface-1: #0e0e0e;
+  --surface-2: #0e0e0e;
   --hairline: oklch(1 0 0 / 8%);
   --glass-bg: oklch(1 0 0 / 4%);
 
@@ -88,19 +88,19 @@
   --shadow-glow-md: 0 0 80px -20px oklch(0.72 0.19 47 / 0.45);
   --shadow-glow-lg: 0 0 160px -40px oklch(0.72 0.19 47 / 0.55);
 
-  --gradient-brand: linear-gradient(135deg, oklch(0.72 0.19 47), oklch(0.78 0.18 55));
-  --gradient-radial-glow: radial-gradient(closest-side, oklch(0.72 0.19 47 / 0.45), transparent 70%);
+  --gradient-brand: linear-gradient(135deg, oklch(0.72 0.19 47), oklch(0.72 0.19 47));
+  --gradient-radial-glow: radial-gradient(closest-side, oklch(0.72 0.19 47 / 0.28), transparent 72%);
 }
 
 .dark {
   /* Same — site is always dark */
-  --background: oklch(0.16 0 0);
+  --background: #0e0e0e;
   --foreground: oklch(0.97 0 0);
 }
 
 @layer base {
   html, body {
-    background-color: #0b0b0b;
+    background-color: #0e0e0e;
     color: var(--color-foreground);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
@@ -111,12 +111,7 @@
 
   ::selection { background: oklch(0.72 0.19 47 / 0.4); color: white; }
 
-  body {
-    background-image:
-      radial-gradient(1200px 600px at 80% -10%, oklch(0.72 0.19 47 / 0.10), transparent 60%),
-      radial-gradient(900px 500px at -10% 30%, oklch(0.72 0.19 47 / 0.06), transparent 60%);
-    background-attachment: fixed;
-  }
+  body { background-image: none; }
 }
 
 @layer utilities {
@@ -153,7 +148,7 @@
   .body-lg { font-size: 1.075rem; line-height: 1.65; color: oklch(0.85 0 0); }
 
   .glass {
-    background: linear-gradient(180deg, oklch(1 0 0 / 0.04), oklch(1 0 0 / 0.015));
+    background: #0e0e0e;
     border: 1px solid var(--hairline);
     backdrop-filter: blur(14px) saturate(140%);
     -webkit-backdrop-filter: blur(14px) saturate(140%);
@@ -162,7 +157,7 @@
 
   .text-brand { color: var(--brand); }
   .bg-brand { background: var(--brand); }
-  .bg-gradient-brand { background-image: var(--gradient-brand); }
+  .bg-gradient-brand { background-image: none; background-color: var(--brand); }
 
   .glow-text {
     text-shadow: 0 0 40px oklch(0.72 0.19 47 / 0.5);

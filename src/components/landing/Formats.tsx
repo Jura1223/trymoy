@@ -27,7 +27,7 @@ const extraIconMap: Record<string, typeof Share2> = {
 
 export function Formats() {
   return (
-    <section className="py-24 md:py-32">
+    <section className="bg-[#0E0E0E] py-20 md:py-28">
       <div className="container-rail">
         <div className="text-center mb-14">
           <div className="eyebrow mb-3">Услуги</div>
@@ -38,7 +38,7 @@ export function Formats() {
           {site.formats.map((f, i) => {
             const Icon = formatIcons[i % formatIcons.length];
             return (
-              <div key={f.title} className="group bg-[#0d0d0d] p-8 transition-colors hover:bg-[#121212]">
+              <div key={f.title} className="group bg-[#0E0E0E] p-8 transition-colors">
                 <Icon className="h-7 w-7 text-[var(--brand)] transition-transform group-hover:scale-110" strokeWidth={1.4} />
                 <h3 className="mt-8 font-display text-lg font-semibold">{f.title}</h3>
                 <p className="mt-2 text-sm text-white/55 leading-relaxed">{f.desc}</p>
@@ -53,29 +53,29 @@ export function Formats() {
 
 export function Extras() {
   return (
-    <section className="pb-28 md:pb-40">
+    <section id="services" className="bg-[#0E0E0E] py-24 md:py-32">
       <div className="container-rail">
-        <div className="text-center mb-16 md:mb-20">
+        <div className="text-center mb-20 md:mb-24">
           <div className="eyebrow mb-4">Ещё</div>
           <h2 className="h1">Дополнительные возможности</h2>
         </div>
 
-        <div className="mx-auto max-w-5xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
+        <div className="mx-auto max-w-6xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {site.extras.map((e) => {
             const Icon = extraIconMap[e.icon] ?? Share2;
             return (
               <div
                 key={e.title}
-                className="group relative rounded-2xl border border-white/[0.07] bg-[#0c0c0c]/80 px-7 py-8 transition-all duration-300 hover:border-[var(--brand)]/40 hover:bg-[#101010]"
+                className="group relative rounded-3xl border border-white/[0.07] bg-[#0E0E0E] px-8 py-10 md:px-10 md:py-12 transition-all duration-300 hover:border-[var(--brand)]/50"
               >
-                <div className="flex items-center gap-5">
-                  <div className="grid h-12 w-12 shrink-0 place-items-center rounded-xl border border-white/[0.08] bg-white/[0.02] transition-colors group-hover:border-[var(--brand)]/40 group-hover:bg-[var(--brand)]/[0.06]">
+                <div className="flex items-center gap-6">
+                  <div className="grid h-14 w-14 shrink-0 place-items-center rounded-2xl border border-white/[0.08] bg-[#0E0E0E] transition-colors group-hover:border-[var(--brand)]/50 group-hover:bg-[#0E0E0E]">
                     <Icon
-                      className="h-5 w-5 text-white/70 transition-colors group-hover:text-[var(--brand)]"
-                      strokeWidth={1.4}
+                      className="h-6 w-6 text-white/70 transition-colors group-hover:text-[var(--brand)]"
+                      strokeWidth={1.2}
                     />
                   </div>
-                  <div className="font-display text-[15px] md:text-base font-medium text-white/90 leading-snug">
+                  <div className="font-display text-base md:text-lg font-medium text-white/90 leading-snug">
                     {e.title}
                   </div>
                 </div>

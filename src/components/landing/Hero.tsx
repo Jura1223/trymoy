@@ -11,7 +11,7 @@ const iconMap = {
 export function Hero() {
   const h = site.hero;
   return (
-    <section className="relative overflow-hidden bg-black pt-32 pb-20 md:pt-36 md:pb-28">
+    <section className="relative overflow-hidden bg-black pt-36 pb-20 md:pt-44 md:pb-28">
       <div className="noise" aria-hidden />
 
       <div className="container-rail grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
@@ -62,7 +62,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.45 }}
-            className="mt-14 inline-flex flex-wrap items-center gap-x-10 gap-y-6 rounded-2xl border border-white/10 bg-white/[0.02] px-8 py-5 backdrop-blur-sm"
+            className="mt-14 inline-flex flex-wrap items-center gap-x-10 gap-y-6 rounded-2xl border border-white/10 bg-[#0E0E0E] px-8 py-5"
           >
             {h.metrics.map((m) => {
               const Icon = iconMap[m.icon as keyof typeof iconMap];
